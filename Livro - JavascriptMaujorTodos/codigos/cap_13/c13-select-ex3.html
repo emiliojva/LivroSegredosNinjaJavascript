@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head> 
+        <title>Livro JavaScript do Maujor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../estilos/main.css" rel="stylesheet" type="text/css" media="all" />
+        <style type="text/css" media="all">
+            form {
+                margin-bottom:20px; 
+                width:400px;
+            }
+        </style>
+        <!-- code highlighter -->
+        <link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+        <script type="text/javascript" src="../scripts/shCore.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+        <script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf";
+            SyntaxHighlighter.all();</script> 
+        <!-- fim code highlighter -->
+        <script type="text/javascript">
+            // <![CDATA[
+            window.onload = function() {
+                //var el, btnAdi, btnRem, novaOpcao;
+                el = document.getElementById("cidade");
+                btnAdi = document.getElementById("adicionar");
+                btnRem = document.getElementById("remover");
+                novaOpcao = document.createElement("option");
+                novaOpcao.text = "Cuiabá";
+                novaOpcao.value = "mt";
+
+                btnAdi.onclick = function() {
+                    try {
+                        el.add(novaOpcao, el.options[1]);
+                    } catch (e) {
+                        el.add(novaOpcao);
+                    }
+                }
+
+                btnRem.onclick = function() {
+                    el.remove(0);
+                }
+            }
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Capítulo 13</h1>
+            <h2>Métodos do objeto <code>select</code> - Exemplo 3</h2>
+            <h3>JavaScript</h3>
+            <pre class="brush: javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function () {
+var el, btnAdi, btnRem, novaOpcao; 
+	el = document.getElementById("cidade");
+	btnAdi = document.getElementById("adicionar");	
+	btnRem = document.getElementById("remover");	
+	novaOpcao = document.createElement("option");
+	novaOpcao.text = "Cuiabá";
+	novaOpcao.value = "mt";
+	
+	btnAdi.onclick	= function() {
+		try {
+			el.add(novaOpcao, el.options[1]);
+		} catch(e) {
+			el.add(novaOpcao);
+		}	
+	}
+
+	btnRem.onclick	= function() {
+		el.remove(0);
+	}
+}
+&lt;script&gt;
+            </pre>
+            <h3>HTML</h3>
+            <pre class="brush: html">
+...
+&lt;form name="form1" action="" method="post">
+&lt;fieldset>
+&lt;legend>Formulário com select&lt;/legend>
+&lt;label for="cidade">Cidade:&lt;/label>&lt;br />
+&lt;select title="Selecione uma cidade" name="cidade" id="cidade" multiple="multiple">
+&lt;option value="rn">Caicó&lt;/option>
+&lt;option value="sc">Florianópolis&lt;/option>
+&lt;option value="rj">Rio de Janeiro&lt;/option>
+&lt;option value="sp">São Paulo&lt;/option>
+&lt;option value="mg">Uberaba&lt;/option>
+&lt;/select>
+&lt;/fieldset>
+&lt;/form>
+
+&lt;button type="button" id="adicionar">Adicionar uma opção&lt;/button>
+&lt;button type="button" id="remover">Remover uma opção&lt;/button>
+...
+            </pre>	
+            <hr />
+            <form name="form1" action="" method="post">
+                <fieldset>
+                    <legend>Formulário com select</legend>
+                    <label for="cidade">Cidade:</label><br />
+                    <select title="Selecione uma cidade" name="cidade" id="cidade" multiple="multiple">
+                        <option value="rn">Caicó</option>
+                        <option value="sc">Florianópolis</option>
+                        <option value="rj">Rio de Janeiro</option>
+                        <option value="sp">São Paulo</option>
+                        <option value="mg">Uberaba</option>
+                    </select>
+                </fieldset>
+            </form>
+
+            <button type="button" id="adicionar">Adicionar uma opção</button>
+            <button type="button" id="remover">Remover uma opção</button>
+
+            <p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-select-ex2.html">&laquo; anterior</a> | <a href="c13-input-ex1.html">próximo &raquo;</a></p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head> 
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" media="all" />
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+// <![CDATA[
+window.onload = function () {
+var el, linha, msg, btnPropriedades, mensagem; 
+	el = document.getElementById("tabela");
+	linha = document.getElementById("linha")
+	msg = document.getElementById("msg");
+	btnPropriedades = document.getElementById("btnprop");	
+	mensagem = "<h3>Propriedades do elemento <code>tr</code></h3>";
+	mensagem += "<ul>";
+	mensagem += "<li>align: " + el.rows[0].align + "</li>";
+	mensagem += "<li>valign: " + el.rows[0].vAlign + "</li>";
+	mensagem += "<li>qde. células: " + el.rows[1].cells.length + "</li>";
+	mensagem += "<li>rowIndex: " + linha.rowIndex + "</li>";
+	mensagem += "<li>sectionRowIndex: " + linha.sectionRowIndex + "</li>";
+	mensagem += "</ul>";
+	
+	btnPropriedades.onclick	= function() {
+		msg.innerHTML = mensagem;
+	}
+}
+// ]]>
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 13</h1>
+<h2>Propriedades do objeto <code>tr</code></h2>
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function () {
+var el, linha, msg, btnPropriedades, mensagem; 
+	el = document.getElementById("tabela");
+	linha = document.getElementById("linha")
+	msg = document.getElementById("msg");
+	btnPropriedades = document.getElementById("btnprop");	
+	mensagem = "&lt;h3>Propriedades do elemento &lt;code>tr&lt;/code>&lt;/h3>";
+	mensagem += "&lt;ul>";
+	mensagem += "&lt;li>align: " + el.rows[0].align + "&lt;/li>";
+	mensagem += "&lt;li>valign: " + el.rows[0].vAlign + "&lt;/li>";
+	mensagem += "&lt;li>qde. células: " + el.rows[1].cells.length + "&lt;/li>";
+	mensagem += "&lt;li>rowIndex: " + linha.rowIndex + "&lt;/li>";
+	mensagem += "&lt;li>sectionRowIndex: " + linha.sectionRowIndex + "&lt;/li>";
+	mensagem += "&lt;/ul>";
+	
+	btnPropriedades.onclick	= function() {
+		msg.innerHTML = mensagem;
+	}
+}
+&lt;script&gt;
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+...
+&lt;table width="500" border="1" cellspacing="0" cellpadding="8" summary="Tabela com quatro linhas e cinco colunas sendo a primeira linha o cabeçalho" id="tabela">
+  &lt;caption align="top">
+    Tabela demonstração row
+  &lt;/caption>
+&lt;thead>
+  &lt;tr align="center" valign="baseline">
+    &lt;th scope="col">célula&lt;/th>
+    &lt;th scope="col">célula&lt;/th>
+    &lt;th scope="col">célula&lt;/th>
+    &lt;th scope="col">célula&lt;/th>
+    &lt;th scope="col">célula&lt;/th>
+  &lt;/tr>
+&lt;/thead>
+&lt;tfoot>
+  &lt;tr id="linha">
+    &lt;td colspan="5">Rodapé&lt;/td>
+   &lt;/tr>
+&lt;/tfoot>
+&lt;tbody>
+  &lt;tr>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+  &lt;/tr>
+  &lt;tr>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+  &lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;br />
+&lt;div id="msg">&lt;/div>
+&lt;button type="button" id="btnprop">Inspecionar propriedades&lt;/button>
+...
+</pre>	
+<hr />
+
+<table width="500" border="1" cellspacing="0" cellpadding="8" summary="Tabela com quatro linhas e cinco colunas sendo a primeira linha o cabeçalho" id="tabela">
+  <caption align="top">
+    Tabela demonstração row
+  </caption>
+<thead>
+  <tr align="center" valign="baseline">
+    <th scope="col">célula</th>
+    <th scope="col">célula</th>
+    <th scope="col">célula</th>
+    <th scope="col">célula</th>
+    <th scope="col">célula</th>
+  </tr>
+</thead>
+<tfoot>
+  <tr id="linha">
+    <td colspan="5">Rodapé</td>
+   </tr>
+</tfoot>
+<tbody>
+  <tr>
+    <td>célula</td>
+    <td>célula</td>
+    <td>célula</td>
+    <td>célula</td>
+    <td>célula</td>
+  </tr>
+  <tr>
+    <td>célula</td>
+    <td>célula</td>
+    <td>célula</td>
+    <td>célula</td>
+    <td>célula</td>
+  </tr>
+</tbody>
+</table>
+<br />
+<div id="msg"></div>
+<button type="button" id="btnprop">Inspecionar propriedades</button>
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-table-ex2.html">&laquo; anterior</a> | <a href="../cap_14/c14-erros.html">Capítulo 14 &raquo;</a></p>
+</div>
+</body>
+</html>

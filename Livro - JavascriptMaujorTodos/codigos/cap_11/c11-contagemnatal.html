@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+var agora, anoCorrente, diaNatal, diferenca, UM_DIA, diasFaltando 
+	agora = new Date();
+	anoCorrente = agora.getFullYear();
+	diaNatal = new Date(anoCorrente, 11, 25);
+	diferenca = diaNatal.getTime() - agora.getTime();	
+	UM_DIA = 24*60*60*1000;	
+window.onload = function() {
+		if (diferenca > 0) {
+			diasFaltando = Math.ceil(diferenca/UM_DIA);
+			document.forms[0].elements[0].value = 'Faltam ' + diasFaltando + ' dias para o Natal.';
+		} else if (diferenca <0 && diferenca > -UM_DIA) {	
+			document.forms[0].elements[0].value = 'Feliz Natal!'; 
+		} else {	
+			diaNatal = new Date(anoCorrente+1, 11, 25);
+			diferenca = diaNatal.getTime() - agora.getTime();
+			diasFaltando = Math.ceil(diferenca/UM_DIA);
+			document.forms[0].elements[0].value = 'Faltam  ' + diasFaltando + ' dias para o Natal.';
+		} 
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 11</h1>
+<h2>Date - Dias faltando para o Natal</h2>
+
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type="text/javascript">
+var agora, anoCorrente, diaNatal, diferenca, UM_DIA, diasFaltando 
+	agora = new Date();
+	anoCorrente = agora.getFullYear();
+	diaNatal = new Date(anoCorrente, 11, 25);
+	diferenca = diaNatal.getTime() - agora.getTime();	
+	UM_DIA = 24*60*60*1000;	
+window.onload = function() {		
+		if (diferenca > 0) {
+			diasFaltando = Math.ceil(diferenca/UM_DIA);
+			alert('Faltam ' + diasFaltando + ' dias para o Natal.');
+		} else if (diferenca <0 && diferenca > -UM_DIA) {	
+			alert('Feliz Natal!'); 
+		} else {	
+			diaNatal = new Date(anoCorrente+1, 11, 25);
+			diferenca = diaNatal.getTime() - agora.getTime();
+			diasFaltando = Math.ceil(diferenca/UM_DIA);
+			alert('Faltam  ' + diasFaltando + ' dias para o Natal.');
+		} 
+}
+&lt;script>
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+&lt;form action="" method="get">
+&lt;input type="text" size="40" />
+&lt;/form>
+</pre>
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="../cap_10/c10-cpf.html">&laquo; capítulo 10</a> | <a href="../cap_12/c12-closed.html">capítulo 12 &raquo;</a></p>
+<form action="" method="get">
+<input type="text" size="40" />
+</form>
+</div>
+</body>
+</html>

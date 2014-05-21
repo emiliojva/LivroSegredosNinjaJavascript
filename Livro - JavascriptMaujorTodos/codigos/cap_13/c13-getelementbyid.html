@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+window.onload = function() {
+	var titUm = document.getElementById("def");
+	var titDois = document.getElementById("tipo");
+		titUm.style.backgroundColor="#00ff00";
+		titDois.style.border="2px solid #0000ff";
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 13</h1>
+<h2>Método <code>getElementById()</code></h2>
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type="text/javascript">
+window.onload = function() {
+	var titUm = document.getElementById("def");
+	var titDois = document.getElementById("tipo");
+		titUm.style.backgroundColor="#00ff00";
+		titDois.style.border="2px solid #0000ff";
+}
+&lt;script>
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+...
+&lt;h2>Introdução&lt;/h2>
+	&lt;p>Texto do parágrafo&lt;/p>
+&lt;h2 id="def">Definição&lt;/h2>
+	&lt;p>Texto do parágrafo&lt;/p>
+&lt;h2 id="tipo">Tipos de DOM&lt;/h2>
+	&lt;ul>
+		&lt;li>DOM para HTML&lt;/li>
+		&lt;li>DOM para XML&lt;/li>
+	&lt;/ul>
+...
+</pre>
+<hr />
+<h2>Introdução</h2>
+	<p>Texto do parágrafo</p>
+<h2 id="def">Definição</h2>
+	<p>Texto do parágrafo</p>
+<h2 id="tipo">Tipos de DOM</h2>
+	<ul>
+		<li>DOM para HTML</li>
+		<li>DOM para XML</li>
+	</ul>
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-init-ex3.html">&laquo; anterior</a> | <a href="c13-getelementsbytagname.html">próximo &raquo;</a></p>
+
+</div>
+</body>
+</html>

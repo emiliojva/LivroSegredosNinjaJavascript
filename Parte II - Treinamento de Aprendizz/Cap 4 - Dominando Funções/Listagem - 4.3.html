@@ -1,0 +1,25 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.3 - Recursão de Método dentro de um objeto(Redundante)</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            
+            var ninja = {
+                chirp: function(n){
+                    return n > 1 ? ninja.chirp(n - 1) + "-chirp" : "chirp";
+                }
+            };
+            
+            assert(samurai.chirp(3)==="chirp-chirp-chirp", "An Object isn't too confusing, either.")
+        </script>
+    </body>
+</html>

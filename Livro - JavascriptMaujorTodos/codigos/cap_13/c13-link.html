@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" media="all" />
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+window.onload = function () {
+// <![CDATA[
+var el, msg, mensagem, elBotao;
+	el = document.getElementsByTagName("link")
+	msg = document.getElementById("msg")
+	elBotao = document.getElementById("btn");	
+	mensagem = "<h3>Atributos do primeiro elemento <code>link</code> do documento</h3>";
+	mensagem += "<ul>";
+	mensagem += "<li>href= " + el[0].href + "</li>";
+	mensagem += "<li>rel= " + el[0].rel + "</li>";
+	mensagem += "<li>type= " + el[0].type + "</li>";
+	mensagem += "<li>media= " + el[0].media + "</li>";
+	mensagem += "</ul>";	
+	elBotao.onclick	= function() {
+		msg.innerHTML = mensagem;
+	el[0].disabled = true;
+	}
+}
+// ]]>
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 13</h1>
+<h2>Propriedades do objeto <code>link</code></h2>
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function () {
+var el, msg, mensagem, elBotao;
+	el = document.getElementsByTagName("link")
+	msg = document.getElementById("msg")
+	elBotao = document.getElementById("btn");	
+	mensagem = "&lt;h3>Atributos do primeiro elemento &lt;code>link&lt;/code> do documento&lt;/h3>";
+	mensagem += "&lt;ul>";
+	mensagem += "&lt;li>href= " + el[0].href + "&lt;/li>";
+	mensagem += "&lt;li>rel= " + el[0].rel + "&lt;/li>";
+	mensagem += "&lt;li>type= " + el[0].type + "&lt;/li>";
+	mensagem += "&lt;li>media= " + el[0].media + "&lt;/li>";
+	mensagem += "&lt;/ul>";	
+	elBotao.onclick	= function() {
+		msg.innerHTML = mensagem;
+	el[0].disabled = true;
+	}
+}
+&lt;script&gt;
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+...
+&lt;head>
+&lt;title>Livro JavaScript do Maujor&lt;/title>
+&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+&lt;link href="../estilos/main.css" rel="stylesheet" type="text/css" media="all" />
+&lt;!-- code highlighter -->
+&lt;link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+...
+&lt;/head>
+&lt;body>
+&lt;div id="msg">&lt;/div>
+&lt;button type="button" id="btn">Rodar Script&lt;/button>
+...
+</pre>	
+<hr />
+<div id="msg"></div>
+<button type="button" id="btn">Rodar Script</button>
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-colecaohtml.html">&laquo; anterior</a> | <a href="c13-meta.html">próximo &raquo;</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+    <head>
+        <title>Livro JavaScript do Maujor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+        <style type="text/css" media="all">
+            #resultado {
+                color:#c30;
+                width:600px;
+                padding:10px 0;
+                overflow:auto;
+            }
+        </style>
+
+        <!-- code highlighter -->
+        <link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+        <script type="text/javascript" src="../scripts/shCore.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+        <script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf";
+            SyntaxHighlighter.all();</script> 
+        <!-- fim code highlighter -->
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Capítulo 6</h1>
+            <h2>Funções Globais - Exemplo 1</h2>
+
+            <p><label>URI (string): <input type="text" id="uri" size="50" /></label></p>
+
+            <p>
+                <button type="button">encodeURI()</button>
+                <button type="button">decodeURI()</button>
+                <button type="button">encodeURIComponent()</button>
+                <button type="button">decodeURIComponent()</button>
+            </p>
+
+            <p>Resultado:</p>
+            <div id="resultado"></div>
+
+            <p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c6-closure-ex6.html">&laquo; anterior</a> | <a href="c6-eval.html">próximo &raquo;</a></p>
+
+        </div>
+        <script type="text/javascript">
+            var campo = document.getElementById('uri');
+            var botao = document.getElementsByTagName('button');
+            var resultado = document.getElementById('resultado');
+
+            botao[0].onclick = function() {
+                var uri = document.getElementById('uri').value;
+                resultado.innerHTML = encodeURI(uri);
+                console.log(resultado.innerHTML);
+            }
+            botao[1].onclick = function() {
+                var uri = document.getElementById('uri').value;
+                resultado.innerHTML = decodeURI(uri);
+            }
+            botao[2].onclick = function() {
+                var uri = document.getElementById('uri').value;
+                resultado.innerHTML = encodeURIComponent(uri);
+            }
+            botao[3].onclick = function() {
+                var uri = document.getElementById('uri').value;
+                resultado.innerHTML = decodeURIComponent(uri);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>Listagem 4.1 - Exemplos Comuns do uso de FUNÇÕES ANONIMAS</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+
+        <script type="text/javascript">
+            // Depois Carregamento total do HTML - POWER
+            window.onload = function() {
+                assert(true, 'POWER');
+            };
+
+            // Primeiro Escopo Global - NINJA
+            var ninja = {
+                shout: function() {
+                    assert(true, "NINJA!");
+                }
+            };
+            
+            ninja.shout();
+            
+            // TIME de 500
+            setTimeout(function(){
+                assert(true,'Forever');
+            },500);
+
+
+
+        </script>
+
+    </body>
+</html>

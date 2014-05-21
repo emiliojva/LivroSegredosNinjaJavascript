@@ -1,0 +1,30 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.6 - Verificação da identidade de um função embutida</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+
+            var ninja = {
+                chirp: function signal(n) {
+                    return n > 1 ? signal(n - 1) + "-chirp" : "chirp";
+                }
+            };
+
+            assert(ninja.chirp(3) === "chirp-chirp-chirp", "Works as we would expect it to!")
+            
+            var samurai = {chirp : ninja.chirp};
+            ninja = {};
+            assert(samurai.chirp(3)=="chirp-chirp-chirp", "The method correcty calls itself");
+
+        </script>
+    </body>
+</html>

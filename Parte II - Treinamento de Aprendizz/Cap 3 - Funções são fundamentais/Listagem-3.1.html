@@ -1,0 +1,96 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>Listagem 3.1 - Prova do que vimos sobre a forma como funções s�o declaradas</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+
+        <script type="text/javascript">
+
+            //#1
+            function isNimble() {
+                return true;
+            }
+
+            //#2
+            assert(typeof window.isNimble === "function",
+                    "isNimble() defined");
+            assert(isNimble.name === "isNimble",
+                    "isNimble() has a name");
+
+
+            //#3
+            var canFly = function() {
+                return true;
+            };
+
+            //#4
+            assert(typeof window.canFly === "function",
+                    "canFly() defined");
+            assert(canFly.name === "",
+                    "canFly() has no name");
+
+
+            //#5
+            window.isDeadly = function() {
+                return true;
+            };
+
+            //#6
+            assert(typeof window.isDeadly === "function",
+                    "isDeadly() defined");
+
+            //#7 - Dentro de outer a função inner é vista como método do escopo. visivel mesmo antes de sua declaração
+            function outer() {
+                assert(typeof inner === "function",
+                        "inner() in scope before declaration");
+                function inner() {
+                }
+                assert(typeof inner === "function",
+                        "inner() in scope after declaration");
+                assert(window.inner === undefined,
+                        "inner() not in global scope");
+            }
+
+            //#8
+            outer();
+            // funcao inner definida apenas no escopo da função outer
+            assert(window.inner === undefined, "inner() still not in global scope");
+
+            //#9
+            window.wieldsSword = function swingsSword() {
+                return true;
+            };
+            
+            assert(window.wieldsSword.name === 'swingsSword',
+                    "wieldSword's real name is swingsSword");
+                    
+            function outer_escopo(){
+                var a = 1;
+                function inner(){ /* não faz nada */}
+                var b = 2; 
+                
+                if(a==1){
+                    var c = 3;
+                }
+            }
+            
+            outer_escopo();
+            
+            assert(true, "some descriptive text");
+            assert(typeof outer_escopo==='function', "outer() is in scope");
+            assert(typeof inner ==='function' , "inner() is in scope");
+            assert(typeof a==='number',"a is in scope");
+            assert(typeof b==='number',"b is in scope");
+            assert(typeof c==='number',"c is in scope");
+
+        </script>
+    </body>
+</html>

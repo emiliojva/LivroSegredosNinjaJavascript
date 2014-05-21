@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+// <![CDATA[
+window.onload = function () {
+var elTitulo = document.getElementById("tit");
+var elParUm = document.getElementsByTagName("p")[0];
+var elMensagem = document.getElementById("msg");
+var elBotao = document.getElementById("btn");	
+var htmlTit = elTitulo.innerHTML; 	
+	
+	elBotao.onclick	= function() {
+		elParUm.innerHTML = "Mudei o texto desse parágrafo";
+		elParUm.style.background = "yellow";
+		elMensagem.innerHTML = "<h2>Título inserido com <code>innerHTML</code></h2>";
+		elMensagem.innerHTML += "<h2>" + htmlTit + "</h2>"; 
+		elMensagem.innerHTML += "<p>Recarregue a página para repetir</p>";
+		elMensagem.style.color = "red";
+	}
+}
+// ]]>
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 13</h1>
+<h2>Propriedade <code>innerHTML</code></h2>
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type="text/javascript">
+window.onload = function () {
+var elTitulo = document.getElementById("tit");
+var elParUm = document.getElementsByTagName("p")[0];
+var elLink = document.getElementsByName("maujor");
+var elMensagem = document.getElementById("msg");
+var elBotao = document.getElementById("btn");	
+var textoTit = elTitulo.innerHTML; 	
+	
+	elBotao.onclick	= function() {
+		elParUm.innerHTML = "Mudei o texto desse parágrafo";
+		elParUm.style.background = "yellow";
+		elMensagem.innerHTML = "&lt;h2>Título inserido com &lt;code>innerHTML&lt;/code>&lt;/h2>";
+		elMensagem.innerHTML += "&lt;h2>" + textoTit + "&lt;/h2>"; 
+		elMensagem.innerHTML += "Recarregue a página para repetir";
+		elMensagem.style.color = "red";
+	}
+}
+&lt;script>
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+...
+&lt;h2 id="tit">Título nível dois&lt;/h2>
+	&lt;p>Texto do primeiro parágrafo&lt;/p>
+	&lt;p>Texto do segundo parágrafo&lt;/p>
+	
+	&lt;div id="msg">&lt;/div> 
+
+&lt;button type="button" id="btn">Rodar Script&lt;/button>
+...
+</pre>
+<hr />
+<h2 id="tit">Título nível dois</h2>
+	<p>Texto do primeiro parágrafo</p>
+	<p>Texto do segundo parágrafo</p>
+	
+	<div id="msg"></div> 
+
+<button type="button" id="btn">Rodar Script</button>
+
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-getelementsbyname.html">&laquo; anterior</a> | <a href="c13-colecaohtml.html">próximo &raquo;</a></p>
+
+</div>
+</body>
+</html>

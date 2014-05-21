@@ -1,0 +1,40 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>Listagem 3.6 - Construção de uma função for-each para demonstrar a definição de um contexto de função</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+
+        <script type="text/javascript">
+
+            /* Função de iteraçaõ - Espera um collection(array de objects) */
+            function forEach(list, callback) {
+                for (var n = 0; n < list.length; n++) {
+                    callback.call(list[n], n);
+                }
+            }
+
+            var weapons = ['shuriken', 'katana', 'nunchucks'];
+
+            forEach(weapons,
+                    function(index) {
+                        // Aqui nesta função digo que será contextualizado OU que será o THIS.
+                        // Neste caso THIS é um objeto String, oriundo do método call da funcão(callback)
+                        console.dir(this);
+                        // n/index
+                        //console.dir(index)
+                        assert(this == weapons[index], "Got the expected value of " + weapons[index]);
+                    }
+            );
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.8 - Armazenamento de uma coleção de funções exclusivas</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+
+            var store = {
+                nextId: 1,
+                cache: {},
+                add: function(fn) {
+                    if (!fn.id) {
+                        fn.id = store.nextId++;
+                        return !!(store.cache[fn.id] = fn);
+                    }
+                }
+            };
+
+            function ninja() {};
+
+            assert(store.add(ninja), "Function was safely added.");
+            assert(!store.add(ninja), "But it was only added once");
+
+        </script>
+    </body>
+</html>

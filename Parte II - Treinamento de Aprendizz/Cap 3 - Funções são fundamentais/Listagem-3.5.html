@@ -1,0 +1,37 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>Listagem 3.5 - Uso dos métodos apply e call para fornecer contexto da função.</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            function juggle() {
+                var contexto_da_funcao = this;
+                var result = 0;
+                for (var n = 0; n < arguments.length; n++) {
+                    result += arguments[n];
+                }
+                this.result = result;
+            }
+
+            var ninja1 = {};
+            var ninja2 = {};
+
+            // Método apply do objeto function trabalha com arguments internamente(implicitamente)
+            juggle.apply(ninja1, [1, 2, 3, 4]);
+            // Método call do objeto function trabalha com literais(explicitamente)
+            juggle.call(ninja2, 5, 6, 7, 8);
+
+            assert(ninja1.result === 10, "juggled via apply");
+            assert(ninja2.result === 26, "juggled via call");
+
+        </script>
+    </body>
+</html>

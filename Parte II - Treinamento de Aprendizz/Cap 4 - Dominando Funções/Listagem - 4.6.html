@@ -1,0 +1,27 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.6 - Verificação da identidade de um função embutida</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            // Embutida, myNinja só pertence a variavel ninja
+            var ninja = function myNinja(){
+                assert(ninja==myNinja, "This function is named two at once")
+            };
+            
+            ninja();
+            
+            assert(typeof myNinja == "undefined", "But myNinja isn't defined outside the function");
+            
+
+        </script>
+    </body>
+</html>
