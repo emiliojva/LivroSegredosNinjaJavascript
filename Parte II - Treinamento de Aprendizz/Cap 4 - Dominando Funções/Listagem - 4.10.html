@@ -15,9 +15,6 @@
     <body>
         <input id="first"/>
         <input id="second"/>
-
-
-
         <script type="text/javascript">
             var elems = {
                 length: 0,
@@ -29,17 +26,11 @@
                     this.add(document.getElementById(id));
                 }
             };
-
             elems.gather('first');
-
             assert(elems.length == 1 && elems[0].nodeType, "Verifique se temos um elemento(DOM) em nosso OBJETO");
-
             elems.gather('second');
-
             assert(elems.length == 2 && elems[0].nodeType, "Verificamos se temos um NOVO elemento(DOM)");
-
-
-
+            // Teste //
         </script>
     </body>
 </html>
