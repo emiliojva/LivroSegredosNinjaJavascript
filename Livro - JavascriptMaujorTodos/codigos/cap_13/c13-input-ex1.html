@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head> 
+        <title>Livro JavaScript do Maujor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../estilos/main.css" rel="stylesheet" type="text/css" media="all" />
+        <style type="text/css" media="all">
+            form {
+                margin-bottom:20px; 
+                width:400px;
+            }
+        </style>
+        <!-- code highlighter -->
+        <link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+        <script type="text/javascript" src="../scripts/shCore.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+        <script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf";
+            SyntaxHighlighter.all();</script> 
+        <!-- fim code highlighter -->
+        <script type="text/javascript">
+            // <![CDATA[
+            window.onload = function() {
+                //var el, msg, elBotao, mensagem;
+                el = document.getElementsByTagName("input");
+                msg = document.getElementById("msg");
+                elBotao = document.getElementById("btn");
+                mensagem = "<h3>Propriedades do elemento <code>input</code></h3>";
+                mensagem += "<ul>";
+                mensagem += "<li> Quantidade: " + el.length;
+                mensagem += "<li> Atributo type: " + el["sexo"].type + "</li>";
+                mensagem += "<li> Atributo tabindex: " + el["az"].tabIndex + "</li>";
+                mensagem += "</ul>";
+                elBotao.onclick = function() {
+                    msg.innerHTML = mensagem;
+
+                    el["am"].disabled = true;
+                    el["fem"].checked = true;
+                    el["nome"].value = "Seu nome aqui";
+                    el["nome"].style.background = "yellow";
+                }
+            }
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Capítulo 13</h1>
+            <h2>Propriedades do objeto <code>input</code> - Exemplo 1</h2>
+            <h3>JavaScript</h3>
+            <pre class="brush: javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function () {
+var el, msg, elBotao, mensagem; 
+	el = document.getElementsByTagName("input");
+	msg = document.getElementById("msg");
+	elBotao = document.getElementById("btn");	
+	mensagem = "&lt;h3>Propriedades do elemento &lt;code>input&lt;/code>&lt;/h3>";
+	mensagem += "&lt;ul>";
+	mensagem += "&lt;li> Quantidade: " + el.length;
+	mensagem += "&lt;li> Atributo type: " + el["sexo"].type + "&lt;/li>";
+	mensagem += "&lt;li> Atributo tabindex: " + el["az"].tabIndex + "&lt;/li>";
+	mensagem += "&lt;/ul>";	
+	elBotao.onclick	= function() {
+		msg.innerHTML = mensagem;
+	
+		el["am"].disabled = true;
+		el["fem"].checked = true;
+		el["nome"].value = "Seu nome aqui";
+		el["nome"].style.background = "yellow";	
+	}
+}
+&lt;script&gt;
+            </pre>
+            <h3>HTML</h3>
+            <pre class="brush: html">
+...
+&lt;form action="" method="post" name="form1" id="form1">
+&lt;fieldset>
+&lt;legend>Formulário com input&lt;/legend>
+&lt;label for="nome">Nome:&lt;/label>&lt;br />
+&lt;input type="text"  name="nome" id="nome" />&lt;br />
+&lt;label for="senha">Senha:&lt;/label>&lt;br />
+&lt;input type="password"  name="senha" id="senha" />&lt;br />
+Sexo:&lt;br />
+&lt;input class="input" type="radio" name="sexo" id="masc" value="masc"  />
+&lt;label for="masc">Masculino&lt;/label>
+&lt;input class="input" type="radio" name="sexo" id="fem" value="fem" />
+&lt;label for="fem">Feminino&lt;/label>&lt;br />
+
+Cor preferida:&lt;br />
+&lt;input class="input" type="checkbox"  name="vm" id="vm" value="vm" />
+&lt;label for="vm">vermelha&lt;/label>
+&lt;input class="input" type="checkbox"  name="vd" id="vd" value="vd" checked="checked" />
+&lt;label for="vd">verde&lt;/label>
+&lt;input class="input" type="checkbox"  name="az" id="az" value="az" tabindex="3"/>
+&lt;label for="az">azul&lt;/label>
+&lt;input class="input" type="checkbox"  name="am" id="am" value="am" />
+&lt;label for="am">amarela&lt;/label>&lt;br />
+&lt;input type="reset" value="Limpar" />
+&lt;input type="submit" value="Enviar" />
+&lt;/fieldset>
+&lt;/form>
+
+&lt;div id="msg">&lt;/div>
+&lt;button type="button" id="btn">Rodar Script&lt;/button>
+...
+            </pre>	
+            <hr />
+            <form action="" method="post" name="form1" id="form1">
+                <fieldset>
+                    <legend>Formulário com input</legend>
+                    <label for="nome">Nome:</label><br />
+                    <input type="text"  name="nome" id="nome" /><br />
+                    <label for="senha">Senha:</label><br />
+                    <input type="password"  name="senha" id="senha" /><br />
+                    Sexo:<br />
+                    <input class="input" type="radio" name="sexo" id="masc" value="masc"  />
+                    <label for="masc">Masculino</label>
+                    <input class="input" type="radio" name="sexo" id="fem" value="fem" />
+                    <label for="fem">Feminino</label><br />
+
+                    Cor preferida:<br />
+                    <input class="input" type="checkbox"  name="vm" id="vm" value="vm" />
+                    <label for="vm">vermelha</label>
+                    <input class="input" type="checkbox"  name="vd" id="vd" value="vd" checked="checked" />
+                    <label for="vd">verde</label>
+                    <input class="input" type="checkbox"  name="az" id="az" value="az" tabindex="3"/>
+                    <label for="az">azul</label>
+                    <input class="input" type="checkbox"  name="am" id="am" value="am" />
+                    <label for="am">amarela</label><br />
+                    <input type="reset" value="Limpar" />
+                    <input type="submit" value="Enviar" />
+                </fieldset>
+            </form>
+
+            <div id="msg"></div>
+            <button type="button" id="btn">Rodar Script</button>
+
+            <p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-select-ex3.html">&laquo; anterior</a> | <a href="c13-input-ex2.html">próximo &raquo;</a></p>
+        </div>
+    </body>
+</html>

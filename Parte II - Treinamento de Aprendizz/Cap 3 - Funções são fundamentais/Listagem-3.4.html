@@ -1,0 +1,47 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>Listagem 3.4 - Uso de construtor para configurar objetos comuns.</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+
+            //(function(){window.count1 = 0;})();
+
+            // Função que será usada como construtor - CamelCase;
+            function Ninja() {
+//                if (window.countNinjas === undefined) {
+//                    window.countNinjas = 0;
+//                }
+
+//                this.id = (new Date().getTime()) + '-' + (++window.countNinjas);
+                this.skulk = function() { return this; };
+            }
+
+            //assert(Ninja().skulk() === ninja,"ssss");
+
+            var ninja1 = new Ninja();
+            var ninja2 = new Ninja();
+            var ninjaLater = new Ninja();
+            
+            
+            /// Exemplo do que acontece com uma função nao preparada para ser Construtor
+            var ninjado = Ninja();
+
+            assert(ninja1.skulk() === ninja1, "The 1st ninja is skulking");
+            assert(ninja2.skulk() === ninja2, "The 2st ninja is skulking");
+            setTimeout(function() {
+                var ninjaLater = new Ninja();
+                assert(ninjaLater.skulk() === ninjaLater, "The ninja was created two seconds after");
+            }, 2000);
+
+        </script>
+    </body>
+</html>

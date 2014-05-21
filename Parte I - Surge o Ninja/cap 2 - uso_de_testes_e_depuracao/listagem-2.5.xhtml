@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Listagem 2.4 - Implementa��o Simples de uma Asserção JavaScript</title>
+        <script type="text/javascript">
+            (function() {
+                var results;
+                // Método Público 
+                this.assert = function(value, desc) {
+                    var li = document.createElement("li");
+                    li.className = value ? 'pass' : 'fail';
+                    li.appendChild(document.createTextNode(desc));
+                    results.appendChild(li);
+                    if (!value) {
+                        li.parentNode.parentNode.className = 'fail';
+                    }
+                    return li;
+                };
+
+                // Método Público 
+                this.test = function(name, fn) {
+                    results = document.getElementById('results');
+                    // Na Verdade que está no lugar é LI, pelo assert(true,name)
+                    results = assert(true, name).appendChild(document.createElement('ul'));
+                    fn();
+                };
+            })();
+
+            window.onload = function() {
+                test('A Test.', function() {
+                    assert(true, 'First  assertion completed');
+                    assert(true, 'Second assertion completed');
+                    assert(true, 'Third  assertion completed');
+                });
+
+                test('Another Test.', function() {
+                    assert(true, 'First  test completed');
+                    assert(false, 'Second assertion failed');
+                    assert(true, 'Third  assertion completed');
+                });
+
+                test('A third test', function() {
+                    assert(null, 'fail');
+                    assert(5, 'pass');
+                });
+            };
+
+        </script>
+
+        <style>
+            #results li.pass {color:green;}
+            #results li.fail {color:red;}
+        </style>
+    </head>
+    <body>
+        <ul id="results"></ul>
+    </body>
+</html>

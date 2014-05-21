@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+    <head>
+        <title>Livro JavaScript do Maujor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+        <!-- code highlighter -->
+        <link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+        <script type="text/javascript" src="../scripts/shCore.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+        <script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf";
+            SyntaxHighlighter.all();</script> 
+        <!-- fim code highlighter -->
+        <script type="text/javascript">
+            var padrao = /^([\d]{3})([\d]{3})([\d]{3})(?:[\d]{2})$/;
+            function mascaraCpf() {
+                var cpf = document.forms[0].elements[0].value;
+                if (!padrao.test(cpf)) {
+                    alert('Entre os 11 números do CPF\nsem pontos e traço');
+                } else {
+                    document.forms[0].elements[0].value = cpf.replace(padrao, '$1.$2.$3-$4');
+                }
+                ;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Capítulo 10</h1>
+            <h2>REgExp - Máscara para CPF com ER</h2>
+
+            <h3>JavaScript</h3>
+            <pre class="brush: javascript">
+&lt;script type="text/javascript">
+var padrao = /^([\d]{3})([\d]{3})([\d]{3})([\d]{2})$/;
+function mascaraCpf() {
+	var cpf = document.forms[0].elements[0].value;
+	if( !padrao.test(cpf) ) {
+	alert('Entre os 11 números do CPF\nsem pontos e traço');	
+	} else {
+	document.forms[0].elements[0].value = cpf.replace(padrao, '$1.$2.$3-$4');
+	};
+}	
+&lt;script>
+            </pre>
+            <h3>HTML</h3>
+            <pre class="brush: html">
+&lt;form action="" method="get">
+&lt;label> CPF: &lt;input type="text" onblur="mascaraCpf()" />&lt;/label>
+&lt;/form>
+            </pre>
+            <p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c10-email.html">&laquo; anterior</a> | <a href="../cap_11/c11-contagemnatal.html">capítulo 11 &raquo;</a></p>
+            <p>Entre os 11 números do CPF e saia do campo</p>
+            <form action="" method="get">
+                <label> CPF: <input type="text" onblur="mascaraCpf()" /></label>
+            </form>
+        </div>
+    </body>
+</html>

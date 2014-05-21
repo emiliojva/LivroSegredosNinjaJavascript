@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+var padrao = /^([\w-]+(\.[\w-]+)*)@(( [\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(\.[a-z]{2})?)$/i;
+function validaEmail() {
+	var email = document.forms[0].elements[0].value;
+	if( padrao.test(email) ) {
+	alert('Parabéns! E-mail válido');	
+	} else {
+	alert('E-mail inválido! Tente outra vez');	
+	}
+}	
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 10</h1>
+<h2>REgExp - Validação de e-mail com ER</h2>
+
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type="text/javascript">
+var padrao = /^([\w-]+(\.[\w-]+)*)@(( [\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(\.[a-z]{2})?)$/i;
+function validaEmail() {
+	var email = document.forms[0].elements[0].value;
+		if( padrao.test(email) ) {
+			alert('Parabéns! E-mail válido');	
+		} else {
+			alert('E-mail inválido! Tente outra vez');	
+	}
+}	
+&lt;script>
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+&lt;form action="" method="get">
+&lt;label> E-mail: &lt;input type="text" size="80" />&lt;/label>
+&lt;button type="button" onclick="validaEmail()">Validar&lt;/button>
+&lt;/form>
+</pre>
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="../cap_09/c9-constructor.html">&laquo; capítulo 9</a> | <a href="c10-cpf.html">próximo &raquo;</a></p>
+<form action="" method="get">
+<label> E-mail: <input type="text" size="80" /></label>
+<button type="button" onclick="validaEmail()">Validar</button>
+</form>
+</div>
+</body>
+</html>

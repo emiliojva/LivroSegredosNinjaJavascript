@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+function numeroAleatorio(a,b) {
+	var ntotal = b-a+1;
+	var resultado =  Math.floor(Math.random()*ntotal + a); 
+	alert('Número gerado: ' + resultado);
+}
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 8</h1>
+<h2>Math <code>random()</code></h2>
+
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+function numeroAleatorio(a,b) {
+	var ntotal = b-a+1;
+	var resultado =  Math.floor(Math.random()*ntotal + a); 
+	alert('Número gerado: ' + resultado);
+}
+&lt;script>
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+&lt;button type="button" onclick="numeroAleatorio(2,12)">Gerar aleatório [2-12]&lt;/button>
+&lt;button type="button" onclick="numeroAleatorio(15,55)">Gerar aleatório [15-55]&lt;/button>
+&lt;button type="button" onclick="numeroAleatorio(10,100)">Gerar aleatório [10-100]&lt;/button>
+&lt;button type="button" onclick="numeroAleatorio(0,10)">Gerar aleatório [0-10]&lt;/button>
+</pre>
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="../cap_07/c7-metodoshtml.html">&laquo; capítulo 7</a> | <a href="../cap_09/c9-constructor.html">capítulo 9 &raquo;</a></p>
+
+<button type="button" onclick="numeroAleatorio(2,12)">Gerar aleatório [2-12]</button>
+<button type="button" onclick="numeroAleatorio(15,55)">Gerar aleatório [15-55]</button>
+<button type="button" onclick="numeroAleatorio(10,100)">Gerar aleatório [10-100]</button>
+<button type="button" onclick="numeroAleatorio(0,10)">Gerar aleatório [0-10]</button>
+</div>
+</body>
+</html>

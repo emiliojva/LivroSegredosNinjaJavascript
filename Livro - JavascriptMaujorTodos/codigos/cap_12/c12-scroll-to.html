@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+    <head>
+        <title>Livro JavaScript do Maujor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+        <!-- code highlighter -->
+        <link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+        <script type="text/javascript" src="../scripts/shCore.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+        <script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf";
+            SyntaxHighlighter.all();</script> 
+        <!-- fim code highlighter -->
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Capítulo 12</h1>
+            <h2>Métodos - <code>scrollTo()</code></h2>
+            <h3>JavaScript</h3>
+            <pre class="brush: javascript">
+&lt;script type="text/javascript">
+	function moveRolagem() {
+		window.scrollTo(100,350);		
+	}
+&lt;script>
+            </pre>
+            <h3>HTML</h3>
+            <pre class="brush: html">
+...
+&lt;button onclick="moveRolagem()">Mover barra rolagem&lt;/button>
+...
+            </pre>
+            <p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c12-move-by.html">&laquo; anterior</a> | <a href="c12-print.html">próximo &raquo;</a></p>
+            <button onclick="moveRolagem()">Mover barra rolagem</button>
+            <button onclick="rolagemAutomatica()">Iniciar Rolagem</button>
+            <button onclick="stopMoveRolagem()">Para de Mover</button>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+        </div>
+
+        <script type="text/javascript">
+            var screenLimit = Math.max(document.body.scrollHeight, document.body.offsetHeight,
+                    document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+
+
+            var limitY = document.documentElement.offsetHeight - document.documentElement.clientHeight;
+            var temporizador = 10;
+            var fimDePagina = false;
+
+            scrollY = 0;
+
+            function rolagemAutomatica() {
+
+                contador = setTimeout(function() {
+
+                    // chegou ao final da página
+                    if (scrollY == limitY) {
+                        fimDePagina = true;
+                        scrollY -= 1;
+                    }
+
+                    // Está no inicio da página
+                    if (scrollY == 0) {
+                        
+                        fimDePagina = false;
+                    }
+
+                    var rolagemDown = scrollY < limitY && !fimDePagina;
+                    var rolagemUp = scrollY < limitY && fimDePagina;
+
+
+                    if (rolagemDown) {
+                        setTimeout(function(){},3000);
+                        scrollY += 1;
+                    }
+
+                    if (rolagemUp) {
+                        setTimeout(function(){},3000)
+                        scrollY -= 1;
+                    }
+
+                    // Execução da Rolagem
+                    scrollTo(100, scrollY);
+
+                    // Recursão
+                    rolagemAutomatica();
+                }, temporizador);
+            }
+
+
+
+            var stopMoveRolagem = function() {
+                clearTimeout(contador);
+            };
+
+            function moveRolagem() {
+                this.scrollTo(100, 350);
+            }
+
+
+            // CrossBrowser pegar ScrollX e Y de uma página
+            function getScrollXY() {
+                var x = 0, y = 0;
+                if (typeof (window.pageYOffset) == 'number') {
+                    // Netscape
+                    x = window.pageXOffset;
+                    y = window.pageYOffset;
+                } else if (document.body && (document.body.scrollLeft || document.body.scrollTop)) {
+                    // DOM
+                    x = document.body.scrollLeft;
+                    y = document.body.scrollTop;
+                } else if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) {
+                    // IE6 standards compliant mode
+                    x = document.documentElement.scrollLeft;
+                    y = document.documentElement.scrollTop;
+                }
+                return [x, y];
+            }
+
+            this.rolagemAutomatica();
+        </script>
+    </body>
+</html>

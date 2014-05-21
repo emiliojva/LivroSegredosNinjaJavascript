@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <title>Livro JavaScript do Maujor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+        <style type="text/css" media="all">
+            #resultado{
+                width:500px;; 
+                border:1px solid #ccc;
+                background:#ffc;
+            }
+        </style>
+        <!-- code highlighter -->
+        <link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+        <script type="text/javascript" src="../scripts/shCore.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+        <script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf";
+            SyntaxHighlighter.all();</script> 
+        <!-- fim code highlighter -->
+        <script type="text/javascript">
+            
+            window.onload = function() {
+                
+                // <![CDATA[
+                var msg = new Array();
+                // Variavel global - NameSpace window.para sendo utilizado
+                this.para = document.getElementsByTagName("p");
+                var resultado = document.getElementById("resultado");
+                msg[0] = '<ul>';
+                msg[1] = '<li>Quantidade de parágrafos: ' + para.length + '</li>';
+                msg[2] = '<li>Texto do 2o.parágrafo: ' + para.item(1).innerHTML + '</li>';
+                msg[3] = '<li>Texto parágrafo com id="xpto": ' + para.namedItem("xpto").innerHTML + '</li>';
+                msg[4] = '</ul>';
+                
+                resultado.innerHTML = msg.join('\n');
+            };
+            
+            
+            function teste(){}
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Capítulo 13</h1>
+            <h2>Atributo e métodos de <code>HTMLColletion</code></h2>
+            <h3>JavaScript</h3>
+            <pre class="brush: javascript">
+                &lt;script type=&quot;text/javascript&quot;&gt;
+                window.onload = function () {
+                var msg; 
+                var para = document.getElementsByTagName("p");
+                var resultado = document.getElementById("resultado");
+                        msg = '&lt;ul>'
+                        msg += '&lt;li>Quantidade de parágrafos: ' + para.length + '&lt;/li>';
+                        msg += '&lt;li>Texto do 2o.parágrafo: ' + para.item(1).innerHTML + '&lt;/li>';
+                        msg += '&lt;li>Texto parágrafo com id="xpto": ' + para.namedItem("xpto").innerHTML + '&lt;/li>'; 
+                        msg += '&lt;/ul>'
+
+                        resultado.innerHTML = msg;	
+                }
+                &lt;script&gt;
+            </pre>
+            <h3>HTML</h3>
+            <pre class="brush: html">
+                ...
+                        &lt;p>Esse é o primeiro parágrafo&lt;/p>
+                        &lt;p>Esse é o segundo parágrafo&lt;/p>
+                        &lt;p id="xpto">Esse é o terceiro parágrafo&lt;/p>
+                        &lt;p>Esse é o quarto parágrafo&lt;/p>
+
+                &lt;div id="resultado">&lt;/div>
+
+                &lt;p >Arquivos exemplo: ...(parágrafo do template dos exemplos)&lt;/p>
+                ..
+            </pre>	
+            <p>Esse é o primeiro parágrafo</p>
+            <p>Esse é o segundo parágrafo</p>
+            <p id="xpto">Esse é o terceiro parágrafo</p>
+            <p>Esse é o quarto parágrafo</p>
+
+            <div id="resultado"></div>
+
+
+            <p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-innerhtml.html">&laquo; anterior</a> | <a href="c13-link.html">próximo &raquo;</a></p>
+
+            
+            
+            <p id="xpto">Esse é o aaa parágrafo</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head> 
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" media="all" />
+<style type="text/css" media="all">
+form {
+	margin-bottom:20px; 
+	width:400px;
+	}
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+// <![CDATA[
+window.onload = function () {
+var el, msg, elBotao, mensagem; 
+	el = document.getElementById("coment");
+	msg = document.getElementById("msg");
+	elBotao = document.getElementById("btn");	
+	mensagem = "<h3>Propriedades do elemento <code>textarea</code></h3>";
+	mensagem += "<ul>";
+	mensagem += "<li>nome do form: " + el.form.name + "</li>";
+	mensagem += "<li>atributo cols: " + el.cols + "</li>";
+	mensagem += "<li>atributo rows: " + el.rows + "</li>";
+	mensagem += "<li>tipo de controle: " + el.type + "</li>";
+	mensagem += "<li>defaultValue: " + el.defaultValue + "</li>";
+	mensagem += "</ul>";
+	
+	elBotao.onclick	= function() {
+		msg.innerHTML = mensagem;
+		el.value = "Conteúdo inserido com a propriedade value"
+	}
+}
+// ]]>
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 13</h1>
+<h2>Propriedades do objeto <code>textarea</code></h2>
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function () {
+var el, msg, elBotao, mensagem; 
+	el = document.getElementById("coment");
+	msg = document.getElementById("msg");
+	elBotao = document.getElementById("btn");	
+	mensagem = "&lt;h3>Propriedades do elemento &lt;code>textarea&lt;/code>&lt;/h3>";
+	mensagem += "&lt;ul>";
+	mensagem += "&lt;li>nome do form: " + el.form.name + "&lt;/li>";
+	mensagem += "&lt;li>atributo cols: " + el.cols + "&lt;/li>";
+	mensagem += "&lt;li>atributo rows: " + el.rows + "&lt;/li>";
+	mensagem += "&lt;li>tipo de controle: " + el.type + "&lt;/li>";
+	mensagem += "&lt;li>defaultValue: " + el.defaultValue + "&lt;/li>";
+	mensagem += "&lt;/ul>";
+	
+	elBotao.onclick	= function() {
+		msg.innerHTML = mensagem;
+		el.value = "Conteúdo inserido com a propriedade value"
+	}
+
+}
+&lt;script&gt;
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+...
+&lt;form action="" method="post" name="form1">
+&lt;fieldset>
+&lt;legend>Formulário com textarea&lt;/legend>
+&lt;label for="coment">Comentario:&lt;/label>&lt;br />
+&lt;textarea id="coment" cols="35" rows="8" name="mensagem">Seu comentário aqui&lt;/textarea>
+&lt;/fieldset>
+&lt;/form>
+
+&lt;div id="msg">&lt;/div>
+&lt;button type="button" id="btn">Rodar Script&lt;/button>
+...
+</pre>	
+<hr />
+<form action="" method="post" name="form1">
+<fieldset>
+<legend>Formulário com textarea</legend>
+<label for="coment">Comentario:</label><br />
+<textarea id="coment" cols="35" rows="8" name="mensagem">Seu comentário aqui</textarea>
+</fieldset>
+</form>
+
+<div id="msg"></div>
+<button type="button" id="btn">Rodar Script</button>
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-input-ex2.html">&laquo; anterior</a> | <a href="c13-table-ex1.html">próximo &raquo;</a></p>
+</div>
+</body>
+</html>

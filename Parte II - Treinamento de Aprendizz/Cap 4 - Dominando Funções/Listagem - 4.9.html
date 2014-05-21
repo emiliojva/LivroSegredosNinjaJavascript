@@ -1,0 +1,47 @@
+<!--
+Técnina de Cache em Javascript IÇAMENTO (memoização). 
+Armazenamento de informações já processadas, em propriedades da própria Função
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.9 - Memoização de valores previamente computados</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            /* INTERNAMENTE ESSA FUNÇÃO REDUZIRÁ O CUSTO DE RETORNO, QUANDO CHAMAR O MESMO VALOR NOVAMENTE */
+            function isPrime(value) {
+                /* Verifica se PROPRIEDADE 'answers' existe. Senão , Criará. */
+                if (!isPrime.answers)
+                    isPrime.answers = {};
+
+                /* Se o value informado constar no cache retorna o valor (DESENPENHO) */
+                if (isPrime.answers[value] != null) {
+                    return isPrime.answers[value];
+                }
+
+                /* Inicialmente o VALUE é dado como PRIMO(PRIME=TRUE). Se for maior que 1 */
+                var prime = value != 1; // 1 nao pode ser primo
+
+                /* Iteração em busca de divisões com Resto 'ZERO' */
+                for (var i = 2; i < value; i++) {
+                    if (value % i == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+
+                /* Armazeno resultado no indice 'VALUE' para propriedade answers e retorno ao chamandor */
+                return (isPrime.answers[value] = prime);
+            }
+
+            assert(isPrime(7), "7 is Prime ");
+            assert(isPrime.answers[7], "The Answer was cached");
+
+
+        </script>
+    </body>
+</html>

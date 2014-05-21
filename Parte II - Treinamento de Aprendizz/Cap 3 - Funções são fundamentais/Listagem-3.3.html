@@ -1,0 +1,39 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>Listagem 3.3 - Ilustrações das diferenças entre invocações de função e de método.</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+
+            // Retorna o CONTEXTO(Escopo ao qual o atributo pertence)
+            // Significa DEFORMAÇÃO
+            function creep() {
+                console.dir(this)
+                return this;
+            };
+
+            assert(creep() === window, "Creeping in the window");
+
+            var sneak = creep;
+
+            assert(sneak() === window, "Sneaking in the window");
+
+            var ninja1 = {skulk: creep};
+
+            assert(ninja1.skulk() === ninja1, "The 1st ninja is skulking");
+
+            var ninja2 = {skulk: creep};
+
+            assert(ninja2.skulk() === ninja2, "The 2st ninja is skulking");
+
+        </script>
+    </body>
+</html>

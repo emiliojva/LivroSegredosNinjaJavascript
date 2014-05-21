@@ -1,0 +1,24 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.2 - Exemplo de Recusão por Comuns do uso de FUNÇÕES ANONIMAS</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            function chirp(n) {
+                return n > 1 ? chirp(n - 1) + "-chirp" : "chirp";
+            }
+
+            window.onload = function() {
+                assert(chirp(3) == "chirp-chirp-chirp", "Calling the named function comes naturallly" )
+            };
+        </script>
+    </body>
+</html>

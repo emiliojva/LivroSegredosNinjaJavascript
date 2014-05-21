@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+    <head>
+        <title>Livro JavaScript do Maujor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+        <!-- code highlighter -->
+        <link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+        <script type="text/javascript" src="../scripts/shCore.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+        <script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf";
+            SyntaxHighlighter.all();</script> 
+        <!-- fim code highlighter -->
+        <script type="text/javascript">
+            function abreJanelaTiraFocus() {
+                var novaJanela = window.open('', 'novaJanela', 'width=200,height=200');
+                novaJanela.document.title = 'Teste'
+                novaJanela.moveTo(800,50)
+                novaJanela.document.write('Testes')
+                novaJanela.setTimeout(function(){ this.opener.focus(); console.log('AA');},3000)
+                
+                console.dir(this)
+            }
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Capítulo 12</h1>
+            <h2>Métodos - <code>blur()</code></h2>
+            <h3>JavaScript</h3>
+            <pre class="brush: javascript">
+&lt;script type="text/javascript">
+	function abreJanelaTiraFocus() {
+		var novaJanela = window.open('','','width=200,height=200');
+		novaJanela.blur();
+	}
+&lt;script>
+            </pre>
+            <h3>HTML</h3>
+            <pre class="brush: html">
+...
+&lt;button onclick="abreJanelaTiraFocus()">Abre janela e tira o foco&lt;/button>
+...
+            </pre>
+            <p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c12-focus.html">&laquo; anterior</a> | <a href="c12-resize-to.html">próximo &raquo;</a></p>
+            <button onclick="abreJanelaTiraFocus()">Abre janela e tira o foco</button>
+            <button onclick="abreJanelaTiraFocus()">Abre Outra janela e tira o foco</button>
+            <input ></input>
+            <input ></input>
+        </div>
+    </body>
+</html>

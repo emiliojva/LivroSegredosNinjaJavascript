@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head> 
+        <title>Livro JavaScript do Maujor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../estilos/main.css" rel="stylesheet" type="text/css" media="all" />
+        <style type="text/css" media="all">
+            form {
+                margin-bottom:20px; 
+                width:400px;
+            }
+        </style>
+        <!-- code highlighter -->
+        <link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+        <script type="text/javascript" src="../scripts/shCore.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+        <script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf";
+            SyntaxHighlighter.all();</script> 
+        <!-- fim code highlighter -->
+        <script type="text/javascript">
+            // <![CDATA[
+            window.onload = function() {
+                var el, msg, mensagem, elBotao;
+                el = document.getElementsByTagName("form")["form2"];
+                msg = document.getElementById("msg");
+                elBotao = document.getElementById("btn");
+                mensagem = "<h3>Atributos do segundo elemento <code>form</code> do documento</h3>";
+                mensagem += "<ul>";
+                mensagem += "<li>name= " + el.name + "</li>";
+                mensagem += "<li>action= " + el.action + "</li>";
+                mensagem += "<li>method= " + el.method + "</li>";
+                mensagem += "<li>target= " + el.target + "</li>";
+                mensagem += "</ul>";
+                elBotao.onclick = function() {
+                    msg.innerHTML = mensagem;
+                }
+            }
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Capítulo 13</h1>
+            <h2>Propriedades do objeto <code>form</code> - Exemplo 2</h2>
+            <h3>JavaScript</h3>
+            <pre class="brush: javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function () {
+var el, msg, mensagem, elBotao;
+	el = document.getElementsByTagName("form")["form2"];
+	msg = document.getElementById("msg");
+	elBotao = document.getElementById("btn");	
+	mensagem = "&lt;h3>Atributos do primeiro elemento &lt;code>form&lt;/code> do documento&lt;/h3>";
+	mensagem += "&lt;ul>";
+	mensagem += "&lt;li>name= " + el.name + "&lt;/li>";
+	mensagem += "&lt;li>action= " + el.action + "&lt;/li>";
+	mensagem += "&lt;li>method= " + el.method + "&lt;/li>";
+	mensagem += "&lt;li>target= " + el.target + "&lt;/li>";
+	mensagem += "&lt;/ul>";	
+	elBotao.onclick	= function() {
+		msg.innerHTML = mensagem;
+	}
+}
+&lt;script&gt;
+            </pre>
+            <h3>HTML</h3>
+            <pre class="brush: html">
+...
+&lt;form name="form1" action="http://livrojavascript.com.br" method="post" target="_blank">
+&lt;fieldset>
+...
+&lt;/fieldset>
+&lt;/form>
+
+&lt;form name="form2" action="processa.php" method="get" target="_top">
+&lt;fieldset>
+&lt;legend>Formulário 2&lt;/legend>
+Idade:&lt;br />
+&lt;input class="input" type="radio" title="Escolha uma opção" name="idade" id="menos30" value="menos30" />&lt;label for="menos30">&nbsp;Menos de 30 anos&lt;/label>&lt;br />
+&lt;input class="input" type="radio" title="Escolha uma opção" name="idade" id="mais30" value="mais30" />&lt;label for="mais30">&nbsp;Mais de 30 anos&lt;/label>&lt;br />
+&lt;/fieldset>
+&lt;/form>
+
+&lt;div id="msg">&lt;/div>
+&lt;button type="button" id="btn">Rodar Script&lt;/button>
+...
+            </pre>	
+            <hr />
+            <form name="form1" action="http://livrojavascript.com.br" method="post" target="_blank">
+                <fieldset>
+                    <legend>Formulário 1</legend>
+                    ...
+                </fieldset>
+            </form>
+
+            <form name="form2" action="processa.php" method="get" target="_top">
+                <fieldset>
+                    <legend>Formulário 2</legend>
+                    Idade:<br />
+                    <input class="input" type="radio" title="Escolha uma opção" name="idade" id="menos30" value="menos30" /><label for="menos30">&nbsp;Menos de 30 anos</label><br />
+                    <input class="input" type="radio" title="Escolha uma opção" name="idade" id="mais30" value="mais30" /><label for="mais30">&nbsp;Mais de 30 anos</label><br />
+                </fieldset>
+            </form>
+
+            <div id="msg"></div>
+            <button type="button" id="btn">Rodar Script</button>
+
+            <p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-form-ex1.html">&laquo; anterior</a> | <a href="c13-form-ex3.html">próximo &raquo;</a></p>
+        </div>
+    </body>
+</html>

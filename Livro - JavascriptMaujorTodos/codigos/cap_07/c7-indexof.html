@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+	function sindexOf() {
+		var texto = 'JavaScript é uma linguagem muito legal.';
+		var s = document.form.s.value;
+		var i = Number(document.form.i.value);
+		if (isFinite(i) && i >= 0 && i <= texto.length-1) {
+		document.form.resultado.value = texto.indexOf(s,i);
+		}else{
+		alert('Entre um índice válido para início');
+		};
+	};
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 7</h1>
+<h2>String <code>indexOf()</code></h2>
+
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type="text/javascript">
+	function sindexOf() {
+		var texto = 'JavaScript é uma linguagem muito legal.';
+		var s = document.form.s.value;
+		var i = Number(document.form.i.value);
+		if (isFinite(i) && i >= 0 && i <= texto.length-1) {
+		document.form.resultado.value = texto.indexOf(s,i);
+		}else{
+		alert('Entre um índice válido para início');
+		};
+	};
+&lt;script>
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+&lt;p>string com 38 caracteres:&lt;br />&lt;b>JavaScript é uma linguagem muito legal.&lt;/b>&lt;/p>
+&lt;form name="form" action="" method="get">
+&lt;label>indexOf: &lt;input type="text" name="s" size="6" />&lt;/label> 
+&lt;label>início &lt;input type="text" name="i" size="4" value="0" />&lt;/label> 
+&lt;button type="button" onclick="sindexOf()">indexOf()&lt;/button> = 
+&lt;input type="text" name="resultado" size="4"  maxlength="4" class="dest" />
+&lt;/form> 
+</pre>
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c7-charcodeat.html">&laquo; anterior</a> | <a href="c7-localecompare.html">próximo &raquo;</a></p>
+<p>string com 38 caracteres:<br /><b>JavaScript é uma linguagem muito legal.</b></p>
+<form name="form" action="" method="get">
+<label>indexOf: <input type="text" name="s" size="6" /></label> 
+<label>início <input type="text" name="i" size="4" value="0" /></label> 
+<button type="button" onclick="sindexOf()">indexOf()</button> = 
+<input type="text" name="resultado" size="4"  maxlength="4" class="dest" />
+</form> 
+</div>
+</body>
+</html>

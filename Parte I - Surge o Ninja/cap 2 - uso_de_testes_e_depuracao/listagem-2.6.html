@@ -1,0 +1,108 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>Listagem 2.6 - Conjunto de Testes Assíncronos</title>
+        <script type="text/javascript">
+            (function() {
+                
+                var queue = [], paused = false, results;
+
+                /* 
+                 * Método Público window.test
+                 * Contem várias asserções que serão executadas de forma sincrona/assincrona e a coloca na fila para aguardar execução
+                 */
+                this.test = function(name, fn) {
+                    queue.push(function() {
+                        // UL retorno
+                        results = document.getElementById('results');
+                        // Na Verdade que está no lugar é LI, pelo assert(true,name)
+                        results = assert(true, name).appendChild(document.createElement('ul'));
+                        fn();
+                    });
+
+                    runTest();
+                };
+
+                this.pause = function() {
+                    paused = true;
+                };
+
+                this.resume = function() {
+                    pause = false;
+                    setTimeout(runTest, 1);
+                };
+
+                function runTest() {
+                    // Senao estiver com pause e tiver função na fila 
+                    if (!paused && queue.length) {
+                        var exec = queue.shift();
+                        // OU queue.shift()();
+                        exec();
+
+                        if (!paused) {
+                            resume();
+                        }
+                    }
+                }
+
+                // Método Público 
+                this.assert = function(value, desc) {
+                    var li = document.createElement("li");
+                    li.className = value ? 'pass' : 'fail';
+                    li.appendChild(document.createTextNode(desc));
+                    results.appendChild(li);
+                    if (!value) {
+                        li.parentNode.parentNode.className = 'fail';
+                    }
+                    return li;
+                };
+            })();
+
+            window.onload = function() {
+                
+                test('Async Test #1', function() {
+                    // paraliza o teste
+                    pause();
+                    // intervalo para teste
+                    setTimeout(function() {
+                        assert(true, "First test Completed");
+                        resume();
+                    }, 1000);
+                });
+
+                // callback retorna uma função
+                function useless(callback) {
+                    return callback();
+                }
+                
+                var text = 'Domo arigato!';
+                assert( useless( function(){return text;} ) === text , "The useless function works! " + text);
+                
+                test('Async Test #2', function() {
+                    // paraliza o teste
+                    pause();    
+                    // intervalo para teste
+                    setTimeout(function() {
+                        assert(true, "Second test Completed");
+                        resume();
+                    }, 1000);
+                });
+                
+
+            };
+
+        </script>
+
+        <style>
+            #results li.pass {color:green;}
+            #results li.fail {color:red;}
+        </style>
+    </head>
+    <body>
+        <ul id="results"></ul>
+    </body>
+</html>

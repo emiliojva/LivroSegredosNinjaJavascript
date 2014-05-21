@@ -1,0 +1,27 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.7 - Uso de arguments.calle para referenciar a função chamadora</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            // Object Literal
+            var ninja = {
+                chirp : function(n){
+                    return n > 1 ? arguments.callee(n-1)+"-chirp" : "chirp";
+                }
+            };
+            
+            assert(ninja.chirp(3) === "chirp-chirp-chirp", "arguments.callee is the function itself.");
+            
+            
+        </script>
+    </body>
+</html>

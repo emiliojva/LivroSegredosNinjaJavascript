@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Listagem 2.4 - Implementação Simples de uma Asserção JavaScript</title>
+        <script src="../../Utilidades.js" type="text/javascript" />
+        <script type="text/javascript">
+            window.onload = function(){
+                var utilidades = new Utilidades();
+                utilidades.assert(true,'The test suite is running');
+                utilidades.assert(false,'Fail');
+            }
+        </script>
+        
+        <style>
+            #results li.pass {color:green;}
+            #results li.fail {color:red;}
+        </style>
+    </head>
+    <body>
+        <ul id="results"></ul>
+    </body>
+</html>

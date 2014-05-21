@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head> 
+        <title>Livro JavaScript do Maujor</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="../estilos/main.css" rel="stylesheet" type="text/css" media="all" />
+        <!-- code highlighter -->
+        <link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+        <link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+        <script type="text/javascript" src="../scripts/shCore.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+        <script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+        <script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf";
+            SyntaxHighlighter.all();</script> 
+        <!-- fim code highlighter -->
+        <script type="text/javascript">
+            // <![CDATA[
+            window.onload = function() {
+                ///var el, msg, btnDelCaption, btnInsCaption, btnDelRow, btnInsRow, linha, celula;
+                el = document.getElementById("tabela");
+                btnDelCaption = document.getElementById("btndc");
+                btnInsCaption = document.getElementById("btnic");
+                btnDelRow = document.getElementById("btndl");
+                btnInsRow = document.getElementById("btnil");
+
+                btnDelCaption.onclick = function() {
+                    el.deleteCaption();
+                }
+
+                btnInsCaption.onclick = function() {
+                    el.createCaption().innerHTML = "Rótulo da Tabela inserido com JavaScript";
+                }
+
+                btnDelRow.onclick = function() {
+                    el.tBodies[0].deleteRow(-1);
+                }
+
+                btnInsRow.onclick = function() {
+                    linha = el.tBodies[0].insertRow(-1);
+                    //console.dir(linha)
+                    for (var i = 0; i < el.tHead.rows[0].cells.length; i++) {
+                        celula = linha.insertCell(i);
+                        celula.innerHTML = "inserida-" + i;
+                    }
+                }
+                
+            }
+            // ]]>
+        </script>
+    </head>
+    <body>
+        <div id="tudo">
+            <h1>Capítulo 13</h1>
+            <h2>Métodos do objeto <code>table</code> - Exemplo 2</h2>
+            <h3>JavaScript</h3>
+            <pre class="brush: javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function () {
+var el, msg, btnDelCaption, btnInsCaption, btnDelRow, btnInsRow, linha, celula; 
+	el= document.getElementById("tabela");
+	btnDelCaption = document.getElementById("btndc");	
+	btnInsCaption = document.getElementById("btnic");	
+	btnDelRow = document.getElementById("btndl");	
+	btnInsRow = document.getElementById("btnil");	
+	
+	btnDelCaption.onclick	= function() {
+		el.deleteCaption(); 
+	}
+	
+	btnInsCaption.onclick	= function() {
+		el.createCaption().innerHTML = "Rótulo da Tabela inserido com JavaScript" ; 
+	}
+
+	btnDelRow.onclick	= function() {
+		el.deleteRow(-1); 
+	}
+	
+	btnInsRow.onclick	= function() {
+		linha = el.insertRow(2); 
+		for (var i=0; i&lt;5; i++) {
+		celula = linha.insertCell(i);
+		celula.innerHTML = "inserida-" + i;
+		}
+	}
+}
+&lt;script&gt;
+            </pre>
+            <h3>HTML</h3>
+            <pre class="brush: html">
+...
+&lt;table width="500" border="1" cellspacing="0" cellpadding="8" summary="Tabela com quatro linhas e cinco colunas sendo a primeira linha o cabeçalho" id="tabela">
+  &lt;caption align="top">
+    Tabela demonstração Exemplo 2
+  &lt;/caption>
+&lt;thead>
+  &lt;tr>
+    &lt;th scope="col">célula&lt;/th>
+    &lt;th scope="col">célula&lt;/th>
+    &lt;th scope="col">célula&lt;/th>
+    &lt;th scope="col">célula&lt;/th>
+    &lt;th scope="col">célula&lt;/th>
+  &lt;/tr>
+&lt;/thead>
+&lt;tfoot>
+  &lt;tr>
+    &lt;td colspan="5">Rodapé&lt;/td>
+   &lt;/tr>
+&lt;/tfoot>
+&lt;tbody>
+  &lt;tr>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+  &lt;/tr>
+  &lt;tr>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+    &lt;td>célula&lt;/td>
+  &lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;br />
+&lt;button type="button" id="btndc">Remover caption&lt;/button>
+&lt;button type="button" id="btnic">Inserir caption&lt;/button>
+&lt;button type="button" id="btndl">Remover linha&lt;/button>
+&lt;button type="button" id="btnil">Inserir linha&lt;/button>
+...
+            </pre>	
+            <hr />
+
+            <table width="500" border="1" cellspacing="0" cellpadding="8" summary="Tabela com quatro linhas e cinco colunas sendo a primeira linha o cabeçalho" id="tabela">
+                <caption align="top">
+                    Tabela demonstração Exemplo 2
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">célula</th>
+                        <th scope="col">célula</th>
+                        <th scope="col">célula</th>
+                        <th scope="col">célula</th>
+                        <th scope="col">célula</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">Rodapé</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>célula</td>
+                        <td>célula</td>
+                        <td>célula</td>
+                        <td>célula</td>
+                        <td>célula</td>
+                    </tr>
+                    <tr>
+                        <td>célula</td>
+                        <td>célula</td>
+                        <td>célula</td>
+                        <td>célula</td>
+                        <td>célula</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <button type="button" id="btndc">Remover caption</button>
+            <button type="button" id="btnic">Inserir caption</button>
+            <button type="button" id="btndl">Remover linha</button>
+            <button type="button" id="btnil">Inserir linha</button>
+
+
+            <p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-table-ex1.html">&laquo; anterior</a> | <a href="c13-row.html">próximo &raquo;</a></p>
+        </div>
+    </body>
+</html>

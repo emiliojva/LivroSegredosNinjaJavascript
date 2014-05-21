@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head> 
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" media="all" />
+<style type="text/css" media="all">
+form {
+	margin-bottom:20px; 
+	width:400px;
+	}
+</style>
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+// <![CDATA[
+window.onload = function () {
+var el, foco, seleciona; 
+	el = document.getElementsByTagName("input");
+	foco = document.getElementById("foco");
+	seleciona = document.getElementById("seleciona");
+		foco.onclick = function() {
+			el["nome"].focus();
+		}
+		
+		seleciona.onclick = function() {
+			el["data"].select();
+		}
+}
+// ]]>
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 13</h1>
+<h2>Métodos do objeto <code>input</code> - Exemplo 2</h2>
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.onload = function () {
+var el, foco, seleciona; 
+	el = document.getElementsByTagName("input");
+	foco = document.getElementById("foco");
+	seleciona = document.getElementById("seleciona");
+		foco.onclick = function() {
+			el["nome"].focus();
+		}
+		
+		seleciona.onclick = function() {
+			el["data"].select();
+		}
+}
+&lt;script&gt;
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+...
+&lt;form action="" method="post">
+&lt;fieldset>
+&lt;legend>Formulário com input&lt;/legend>
+&lt;label for="nome">Nome:&lt;/label>&lt;br />
+&lt;input type="text"  name="nome" />&lt;br />
+&lt;label for="data:">Data:&lt;/label>&lt;br />
+&lt;input type="text"  name="data" value="dd/mm/aaaa" />&lt;br />
+&lt;/fieldset>
+&lt;/form>
+
+&lt;button type="button" id="foco">Dar o foco&lt;/button>
+&lt;button type="button" id="seleciona">Selecionar&lt;/button>
+...
+</pre>	
+<hr />
+<form action="" method="post">
+<fieldset>
+<legend>Formulário com input</legend>
+<label for="nome">Nome:</label><br />
+<input type="text"  name="nome" /><br />
+<label for="data:">Data:</label><br />
+<input type="text"  name="data" value="dd/mm/aaaa" /><br />
+</fieldset>
+</form>
+
+<button type="button" id="foco">Dar o foco</button>
+<button type="button" id="seleciona">Selecionar</button>
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c13-input-ex1.html">&laquo; anterior</a> | <a href="c13-textarea.html">próximo &raquo;</a></p>
+</div>
+</body>
+</html>

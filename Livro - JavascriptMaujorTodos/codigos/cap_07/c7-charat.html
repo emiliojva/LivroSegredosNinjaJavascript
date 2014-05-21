@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+<title>Livro JavaScript do Maujor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="../estilos/main.css" rel="stylesheet" type="text/css" />
+<!-- code highlighter -->
+<link type="text/css" rel="stylesheet" href="../estilos/shCore.css" />
+<link type="text/css" rel="stylesheet" href="../estilos/shThemeDefault.css" />
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = "../scripts/clipboard.swf"; SyntaxHighlighter.all();</script> 
+<!-- fim code highlighter -->
+<script type="text/javascript">
+	function scharAt() {
+		var texto = 'mau%\SR=+t$@ 098mu hjor \\\a';
+		var indice = Number(document.form.indice.value);
+		if (isFinite(indice) && indice >= 0 && indice <= texto.length-1) {
+		document.form.resultado.value = texto.charAt(indice);
+		}else{
+		alert('Entre um índice válido');
+		};
+	};
+</script>
+</head>
+<body>
+<div id="tudo">
+<h1>Capítulo 7</h1>
+<h2>String <code>charAt()</code></h2>
+
+<h3>JavaScript</h3>
+<pre class="brush: javascript">
+&lt;script type="text/javascript">
+	function scharAt() {
+		var texto = 'mau%\SR=+t$@ 098mu hjor \\\a';
+		var indice = Number(document.form.indice.value);
+		if (isFinite(indice) &amp;&amp; indice == 0 || indice <= texto.length-1) {
+		document.form.resultado.value = texto.charAt(indice);
+		}else{
+		alert('Entre um índice válido');
+		};
+	};
+&lt;script>
+</pre>
+<h3>HTML</h3>
+<pre class="brush: html">
+&lt;p>string:&lt;br />&lt;b> mau%\sr=+t$@ 098mu hjor \\\a&lt;/b>&lt;/p>
+&lt;form name="form" action="" method="get">
+&lt;label>Índice: &lt;input type="text" name="indice" size="2" maxlength="2"  value="0" />&lt;/label> 
+&lt;button type="button" onclick="scharAt()">string.charAt()&lt;/button> = 
+&lt;input type="text" name="resultado" size="1"  maxlength="2" class="dest" />
+&lt;/form> 
+</pre>
+
+<p class="nav-arq" id="referencia">Arquivos exemplo: <a href="c7-constructor.html">&laquo; anterior</a> | <a href="c7-charcodeat.html">próximo &raquo;</a></p>
+<p>string:<br /><b> mau%\SR=+t$@ 098mu hjor \\\a</b></p>
+<form name="form" action="" method="get">
+<label>Índice: (máx 24) <input type="text" name="indice" size="2" maxlength="2" value="0" /></label> 
+<button type="button" onclick="scharAt()">string.charAt()</button> = 
+<input type="text" name="resultado" size="1"  maxlength="2" class="dest" />
+</form> 
+</div>
+</body>
+</html>
