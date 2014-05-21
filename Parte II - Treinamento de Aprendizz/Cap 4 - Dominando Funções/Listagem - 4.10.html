@@ -21,6 +21,7 @@
         <script type="text/javascript">
             var elems = {
                 length: 0,
+                // Adicionará elementos do DOM no Objeto(this) como se fosse um Array, e utilizará length++
                 add: function(elem) {
                     Array.prototype.push.call(this, elem);
                 },
