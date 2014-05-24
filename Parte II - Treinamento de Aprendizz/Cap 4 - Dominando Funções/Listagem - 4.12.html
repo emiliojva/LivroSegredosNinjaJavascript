@@ -1,0 +1,36 @@
+<!--
+    A Função poderá lidar com Objeto N atributos passados
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.12 - Travessia de Listas de argumentos de comprimento variável</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <script type="text/javascript">
+            /* root é argumento explicito/nomeado contabilizado pela propriedade LENGTH da function*/
+            /* arguments.length registra todos.  nomeados ou não */
+            function merge(root) {
+                /* Variavel i começa de 1 porque root representa arguments[i] */
+                for (var i = 1; i < arguments.length; i++) {
+                    for (var key in arguments[i]) {
+                        /* Forma de armazenar em um novo objeto, o valor do objeto contido arguments */
+                        /* root já possui uma propriedade name. que terá agora também city*/
+                        root[key] = arguments[i][key];
+                    }
+                }
+                return root;
+            }
+
+            /* Passando objetos como argumentos */
+            var merged = merge({name: "Batou"},{city: "Niihama"});
+            
+            /* assertividade */
+            assert(merged.name == "Batou", "O Nome Original Intacto");
+            assert(merged.city == "Niihama", "E a cidade pode ser copiada para o primeiro argumento(root)");
+
+        </script>
+    </body>
+</html>
