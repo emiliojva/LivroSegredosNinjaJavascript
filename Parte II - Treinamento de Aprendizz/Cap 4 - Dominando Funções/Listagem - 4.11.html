@@ -1,0 +1,27 @@
+<!--
+    Uso do Método apply de function, para fornecer argumentos variaveis
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.11 - Funções MIN e MAX genéricas para ARRAYS</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <script type="text/javascript">
+            function smallest(array) {
+                return Math.min.apply(Math, array);
+            }
+
+            function largest(array) {
+                return Math.max.apply(Math, array);
+            }
+
+            assert(smallest([0, 1, 2, 3]) == 0, "Localizado o menor Valor");
+            assert(largest([0, 1, 2, 3]) == 3, "Localizado o Maior Valor");
+
+
+        </script>
+    </body>
+</html>
