@@ -1,0 +1,21 @@
+<!--
+    Verificação que propriedade 'arguments' de um objeto tipo 'function', não é um ARRAY. 
+    Portanto não possui como métodos como Slice, Sort e outros
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.13 - Decomposição da lista de argumentos</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <script type="text/javascript">
+            function multiMax(multi){
+                /* O método Slice percente ao prototipo do Objeto ARRAY */
+                return multi * Math.max.apply(Math,arguments.slice(1));
+            }
+            assert(multiMax((3,1,2,3)==9, "3*3=9 (Primeiro Argumento X Maior Argumento "));
+        </script>
+    </body>
+</html>

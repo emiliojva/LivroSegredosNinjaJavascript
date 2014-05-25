@@ -1,0 +1,77 @@
+<!--
+    Sobrecarga da função pela contagem de argumentos
+    Função que agrega método com sobrecarga , para um objeto, 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.16 - Teste da Função addMethod()</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <script type="text/javascript">
+            /*
+             * 
+             * @param {type Object} object - Contexto(this) para o método
+             * @param {type String} name - nome do método
+             * @param {type Function} fn - funcionalidade do método
+             * @returns {addMethod}
+             */
+            function addMethod(object, name, fn) {
+                // Privada
+                var old = object[name];
+
+                // Escopo Global(window)
+                object[name] = function() {
+                    console.dir(fn)
+                    if (fn.length == arguments.length) {
+                        return  fn.apply(this, arguments);
+                    }
+                    else if (typeof old == 'function') {
+                        return old.apply(this, arguments);
+                    }
+                };
+            }
+
+            // Literal Object 
+            var ninjas = {
+                values: ["Dean Edwards", "Sam Stepheson", "Alex Russell"]
+            };
+
+            // Retorna todos os Ninjas
+            addMethod(ninjas, "find", function() {
+                return this.values;
+            });
+
+            // Localiza Ninja por Nome
+            addMethod(ninjas, "find", function(name) {
+                var ret = [];
+                // Iterando sobre a propriedade Array Values
+                // Adicionando novo elemento caso encontrado no this.values pelo name fornecido
+                for (var i = 0; i < this.values.length; i++) {
+                    if (this.values[i].indexOf(name) == 0)
+                        ret.push(this.values[i]);
+                }
+                return ret;
+            });
+
+            addMethod(ninjas, "find", function(firstName, lastName) {
+                var ret = [];
+                for (var i = 0; i < this.values.length; i++) {
+                    if (this.values[i] == (firstName.trim() + " " + lastName.trim()))
+                        ret.push(this.values[i]);
+                }
+                return ret;
+            });
+
+
+            assert(ninjas.find().length == 3, "Todos os Ninjas encontrados!");
+            assert(ninjas.find("Sam").length == 1, "Encontrado ninja por nome!");
+            assert(ninjas.find("Dean", "Edwards").length == 1, "Encontrado ninja por nome e sobrenome!");
+            assert(ninjas.find("Alex", "Russell", "Jr") == null, "Nenhum ninja encontrado!");
+
+
+        </script>
+    </body>
+</html>

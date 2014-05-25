@@ -1,0 +1,36 @@
+<!--
+    Sobrecarga da função pela contagem de argumentos
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Listagem 4.15 - Função de sobrecarga de método</title>
+        <script type="text/javascript" src="../../scripts/assert.js"></script>
+        <link href="../../styles/assert.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <script type="text/javascript">
+            /*
+             * 
+             * @param {type Object} object - Contexto(this) para o método
+             * @param {type String} name - nome do método
+             * @param {type Function} fn - funcionalidade do método
+             * @returns {addMethod}
+             */
+            function addMethod(object, name, fn) {
+                // Privada
+                var old = object[name];
+
+                // Escopo Global(window)
+                object[name] = function() {
+                    if (fn.length == arguments.length) {
+                        return fn.apply(this, arguments);
+                    }
+                    else if (typeof old == 'function') {
+                        return old.apply(this, arguments)
+                    }
+                };
+            }
+        </script>
+    </body>
+</html>
